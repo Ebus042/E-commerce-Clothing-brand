@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        marcellus: ["Marcellus", "serif"],
         poppins: ["Poppins", "sans-serif"],
+        jost: ["Jost", "sans-serif"],
+        marcellus: ["Marcellus", "serif"],
       },
     },
   },
