@@ -31,12 +31,15 @@ export const navbar = [
   },
 ];
 
+// import { label } from "framer-motion/client";
 import heroImg1 from "./src/Images/banner-image-1.jpg";
 import heroImg2 from "./src/Images/banner-image-2.jpg";
 import heroImg3 from "./src/Images/banner-image-3.jpg";
 import heroImg4 from "./src/Images/banner-image-4.jpg";
 import heroImg5 from "./src/Images/banner-image-5.jpg";
 import heroImg6 from "./src/Images/banner-image-6.jpg";
+
+export default [heroImg1];
 
 export const HeroSection = [
   {
@@ -92,5 +95,32 @@ export const HeroSection = [
     description:
       "Scelerisque duis aliquam qui lorem ipsum dolor amet, consectetur adipiscing elit.",
     link: "Discover Now",
+  },
+];
+
+export const OptionSection = [
+  {
+    title: "Book An Appointment",
+    id: 1,
+    description:
+      "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
+  },
+  {
+    title: "Pick up in store",
+    id: 2,
+    description:
+      "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
+  },
+  {
+    title: "Special packaging",
+    id: 3,
+    description:
+      "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
+  },
+  {
+    title: "free global returns",
+    id: 4,
+    description:
+      "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
   },
 ];

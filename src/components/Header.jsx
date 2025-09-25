@@ -1,18 +1,19 @@
 import { Heart, Menu, Search, ShoppingCart } from "lucide-react";
 import { navbar } from "../../data";
+// import Hero from "./components/Hero";
 
 const Header = () => {
   return (
-    <div className="bg-[#f1f1f0] h-screen">
-      <div className="shadow py-10">
+    <div className="">
+      <div className="shadow py-7">
         <nav
-          className="flex justify-between items-center 
-        font-jost  mx-5 lg:mx-10"
+          className="flex justify-between items-center
+        font-jost mx-5 lg:ml-10 lg:mr-20 xl:mx-5"
         >
           <div>
             <h2 className="font-bold text-3xl">NEA-DEV</h2>
           </div>
-          <div className="lg:hidden bg-gray-200 py-1 px-2">
+          <div className="xl:hidden bg-gray-200 py-1 px-2">
             <Menu />
           </div>
           {/* <div className="hidden lg:flex items-center gap-5">
@@ -34,8 +35,8 @@ const Header = () => {
             </button>
           </div>
           <div
-            className="hidden lg:flex uppercase text-[#545454] lg:text-xl  
-          justify-center items-center gap-20"
+            className="hidden xl:flex uppercase text-[#545454] lg:text-xl  
+          justify-center items-center gap-16"
           >
             {navbar.map((item) => (
               <ul key={item.id}>
@@ -46,7 +47,7 @@ const Header = () => {
               </ul>
             ))}
           </div>
-          <div className="hidden uppercase text-[#545454] lg:text-xl lg:flex gap-8">
+          <div className="hidden uppercase text-[#545454] lg:text-lg lg:flex gap-8">
             <p className="cursor-pointer">WishList(0)</p>
             <span className="cursor-pointer">Cart(0)</span>
             <button>
