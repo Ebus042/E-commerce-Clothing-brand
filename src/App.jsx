@@ -1,19 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+// import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Features from "./components/Features";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="bg-[#f1f1f0] h-screen">
+      <header className="bg-[#f1f1f0]">
         <Header />
         <Hero />
-      </div>
+      </header>
+      <main className="pt-10">
+        <Features />
+      </main>
     </>
   );
 }

@@ -29,22 +29,22 @@ const fadeUp = (delay = 0) => ({
 const Hero = () => {
   return (
     <motion.div
-      variants={{ container }}
+      variants={container}
       initial="hidden"
       animate="show"
-      className="font-jost bg-[#f1f1f0] my-16"
+      className="font-jost bg-[#f1f1f0]"
     >
       {/* Title + Description */}
       <div className="text-center px-4">
         <motion.h1
           variants={fadeUp(0.1)}
-          className="text-[4rem] font-marcellus lg:text-[5.8rem] lg:w-full mb-7"
+          className="text-[4rem] font-marcellus lg:text-[4.5rem] lg:w-full pt-36"
         >
           New Collections
         </motion.h1>
         <motion.p
           variants={fadeUp(0.3)}
-          className="text-lg mb-10 text-[#797978] w-[23rem] mx-auto lg:w-[40rem] tracking-normal lg:tracking-wide lg:leading-loose lg:text-xl"
+          className="my-10 mx-auto xl:mt-2 text-lg text-[#797978] max-w-md lg:max-w-2xl tracking-normal lg:tracking-wide lg:leading-7 lg:text-xl"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
           voluptas ut dolorum consequuntur, adipisci repellat! Eveniet commodi
@@ -52,31 +52,31 @@ const Hero = () => {
           harum, quibusdam ex repellat eaque!
         </motion.p>
       </div>
-
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={40}
-        pagination
-        navigation
-        // slidePerView={3}
-        loop={true}
-        className="mySwiper"
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {/* Hero Grid */}
-        <motion.div
-          variants={container}
-          className="gap-8 grid lg:grid-cols-2 xl:grid-cols-3 lg:mx-20"
+      <div className="px-5 lg:px-20">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={40}
+          pagination
+          navigation
+          // slidePerView={3}
+          loop={true}
+          className="mySwiper"
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
         >
+          {/* Hero Grid */}
+          {/* <motion.div
+          variants={container}
+          className="grid lg:grid-cols-2 xl:grid-cols-3"
+        > */}
           {HeroSection.map((section) => (
             <SwiperSlide key={section.id}>
               <motion.div
                 variants={fadeUp(0.6)}
-                className="group flex flex-col lg:items-center gap-8 cursor-pointer"
+                className="group flex flex-col items-center justify-around gap-3cursor-pointer"
               >
                 <div
                   className="group overflow-hidden hover:scale-90
@@ -85,7 +85,7 @@ const Hero = () => {
                   <img
                     src={section.src}
                     alt={section.alt}
-                    className="w-[30rem] h-auto transition-transform duration-500 
+                    className="w-full h-auto transition-transform duration-500 
                     object-cover ease-in-out group-hover:scale-125"
                   />
                 </div>
@@ -93,7 +93,7 @@ const Hero = () => {
                 {/* Text Content */}
                 <motion.div className="mx-2">
                   <h4
-                    className="my-5 relative inline-block uppercase text-2xl
+                    className="my-2 relative inline-block uppercase text-2xl
                   after:content-[''] after:absolute after:left-0 after:bottom-0
                   after:h-[1px] after:w-0 after:bg-blue-700
                   after:transition-all after:duration-700 after:ease-in-out
@@ -102,7 +102,7 @@ const Hero = () => {
                     {section.title}
                   </h4>
 
-                  <p className="text-[#797978] tracking-wider text-lg leading-normal my-5">
+                  <p className="text-[#797978] tracking-wider text-lg leading-normal my-2">
                     {section.description}
                   </p>
 
@@ -122,8 +122,9 @@ const Hero = () => {
               </motion.div>
             </SwiperSlide>
           ))}
-        </motion.div>
-      </Swiper>
+          {/* </motion.div> */}
+        </Swiper>
+      </div>
     </motion.div>
   );
 };

@@ -98,27 +98,38 @@ export const HeroSection = [
   },
 ];
 
+import {
+  faCalendarCheck,
+  faShoppingBag,
+  faCartFlatbedSuitcase,
+  faRotate,
+} from "@fortawesome/free-solid-svg-icons";
+
 export const OptionSection = [
   {
     title: "Book An Appointment",
+    icon: faCalendarCheck,
     id: 1,
     description:
       "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
   },
   {
-    title: "Pick up in store",
+    title: "Pick Up In Store",
+    icon: faShoppingBag,
     id: 2,
     description:
       "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
   },
   {
-    title: "Special packaging",
+    title: "Special Packaging",
+    icon: faCartFlatbedSuitcase,
     id: 3,
     description:
       "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
   },
   {
-    title: "free global returns",
+    title: "Free Global Returns",
+    icon: faRotate,
     id: 4,
     description:
       "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",

@@ -1,62 +1,82 @@
-import { Heart, Menu, Search, ShoppingCart } from "lucide-react";
+import { Heart, Menu, Search, ShoppingCart, X } from "lucide-react";
 import { navbar } from "../../data";
-// import Hero from "./components/Hero";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
+  const [clicked, setClicked] = useState(false);
+
   return (
-    <div className="">
-      <div className="shadow py-7">
-        <nav
-          className="flex justify-between items-center
-        font-jost mx-5 lg:ml-10 lg:mr-20 xl:mx-5"
+    <header className="shadow py-5 font-jost fixed w-full z-20 top-0 left-0 bg-[#f1f1f0]">
+      <nav className="flex justify-between items-center mx-5 lg:ml-10 lg:mr-20 xl:mx-5">
+        {/* Logo */}
+        <h2 className="font-bold text-3xl">NEA-DEV</h2>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setClicked(!clicked)}
+          className="xl:hidden bg-gray-200 p-2 z-20 rounded-md"
         >
-          <div>
-            <h2 className="font-bold text-3xl">NEA-DEV</h2>
-          </div>
-          <div className="xl:hidden bg-gray-200 py-1 px-2">
-            <Menu />
-          </div>
-          {/* <div className="hidden lg:flex items-center gap-5">
-            {navbar.map((item) => (
-              <ul key={item.id}>
-                <li>
-                  <a href={item.href}></a>
-                  {item.label}
-                </li>
-              </ul>
-            ))}
-          </div> */}
-          <div className="flex items-center text-lg font-semibold lg:hidden gap-3">
-            <Heart className="cursor-pointer" />
-            <ShoppingCart className="cursor-pointer" />
-            <button>
-              {" "}
-              <Search />
-            </button>
-          </div>
-          <div
-            className="hidden xl:flex uppercase text-[#545454] lg:text-xl  
-          justify-center items-center gap-16"
+          {clicked ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Desktop Nav */}
+        <div className="hidden xl:flex items-center gap-8 uppercase text-[#545454] lg:text-lg">
+          {navbar.map((item) => (
+            <a
+              key={item.id}
+              href={item.href}
+              className="cursor-pointer hover:scale-110 transition duration-300"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Desktop Icons */}
+        <div className="hidden xl:flex items-center z-50 gap-6 text-[#545454]">
+          <p className="cursor-pointer">Wishlist(0)</p>
+          <span className="cursor-pointer">Cart(0)</span>
+          <button>
+            <Search />
+          </button>
+        </div>
+
+        {/* Mobile Icons */}
+        <div className="flex xl:hidden items-center gap-4 text-lg font-semibold">
+          <Heart className="cursor-pointer" />
+          <ShoppingCart className="cursor-pointer" />
+          <button>
+            <Search />
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Slide-in Menu */}
+      <AnimatePresence>
+        {clicked && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: "50%" }} // stops halfway (50% viewport width shown)
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.4 }}
+            className="fixed top-0 right-0 w-80 h-full bg-gray-100 shadow-lg p-6 uppercase text-[#545454] text-lg z-40"
           >
-            {navbar.map((item) => (
-              <ul key={item.id}>
-                <li className="cursor-pointer font-jost hover:scale-125 transition-all duration-500 ease-in-out">
-                  <a href={item.href}></a>
+            <div className="flex flex-col space-y-6 mt-10">
+              {navbar.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="block cursor-pointer hover:pl-2 transition-all"
+                >
                   {item.label}
-                </li>
-              </ul>
-            ))}
-          </div>
-          <div className="hidden uppercase text-[#545454] lg:text-lg lg:flex gap-8">
-            <p className="cursor-pointer">WishList(0)</p>
-            <span className="cursor-pointer">Cart(0)</span>
-            <button>
-              <Search />
-            </button>
-          </div>
-        </nav>
-      </div>
-    </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 
