@@ -135,3 +135,164 @@ export const OptionSection = [
       "At imperdiet dui accumsan sit amet nulla risus est ultricies quis.",
   },
 ];
+
+// Cart section
+import cartImg1 from "./src/Images/cat-item1.jpg";
+import cartImg2 from "./src/Images/cat-item2.jpg";
+import cartImg3 from "./src/Images/cat-item3.jpg";
+
+//Cart backround
+import Cartbg1 from "./src/Images/cat-item1.jpg";
+import Cartbg2 from "./src/Images/cat-item2.jpg";
+import Cartbg3 from "./src/Images/cat-item3.jpg";
+
+export const carts = [
+  {
+    background: Cartbg1,
+    image: cartImg1,
+    label: "SHOP FOR MEN",
+    id: 1,
+    alt: "A man on black",
+  },
+  {
+    background: Cartbg2,
+    image: cartImg2,
+    label: "SHOP FOR WOMEN",
+    id: 2,
+    alt: "A woman on White",
+  },
+  {
+    background: Cartbg3,
+    image: cartImg3,
+    label: "SHOP ACCESSORIES",
+    alt: "An Image of Accessories",
+    id: 3,
+  },
+];
+
+// New arrivals
+import arrivalImg1 from "./src/Images/product-item-1.jpg";
+import arrivalImg2 from "./src/Images/product-item-2.jpg";
+import arrivalImg3 from "./src/Images/product-item-3.jpg";
+import arrivalImg4 from "./src/Images/product-item-4.jpg";
+import arrivalImg5 from "./src/Images/product-item-10.jpg";
+
+export const newArrival = [
+  {
+    image: arrivalImg1,
+    id: 1,
+    label: "Dark florish onepiece",
+    price: "$95.00",
+  },
+  {
+    image: arrivalImg2,
+    id: 2,
+    label: "Baggy Shirt",
+    price: "$55.00",
+  },
+  {
+    image: arrivalImg3,
+    id: 3,
+    label: "Cotton off-white shirt",
+    price: "$65.00",
+  },
+  {
+    image: arrivalImg4,
+    id: 4,
+    label: "WHITE T-SHIRT",
+    price: "$50.00",
+  },
+  {
+    image: arrivalImg5,
+    id: 5,
+    label: "CROP SWEATER",
+    price: "$70.00",
+  },
+];
+
+//Best Selling
+import bestSellingImg1 from "./src/Images/product-item-4.jpg";
+import bestSellingImg2 from "./src/Images/product-item-3.jpg";
+import bestSellingImg3 from "./src/Images/product-item-5.jpg";
+import bestSellingImg4 from "./src/Images/product-item-6.jpg";
+import bestSellingImg5 from "./src/Images/product-item-9.jpg";
+import bestSellingImg6 from "./src/Images/product-item-10.jpg";
+
+export const bestSellingSection = [
+  {
+    image: bestSellingImg1,
+    id: 1,
+    label: "Dark florish onepiece",
+    price: "$95.00",
+  },
+  {
+    image: bestSellingImg2,
+    id: 2,
+    label: "Baggy Shirt",
+    price: "$55.00",
+  },
+  {
+    image: bestSellingImg3,
+    id: 3,
+    label: "Cotton off-white shirt",
+    price: "$65.00",
+  },
+  {
+    image: bestSellingImg4,
+    id: 4,
+    label: "Handmade crop sweater",
+    price: "$50.00",
+  },
+  {
+    image: bestSellingImg5,
+    id: 5,
+    label: "Dark florish onepiece",
+    price: "$70.00",
+  },
+  {
+    image: bestSellingImg6,
+    id: 6,
+    label: "Cotton off-white shirt",
+    price: "$70.00",
+  },
+];
+
+//Also Like
+import alsoLikeImg1 from "./src/Images/product-item-5.jpg";
+import alsoLikeImg2 from "./src/Images/product-item-6.jpg";
+import alsoLikeImg3 from "./src/Images/product-item-1.jpg";
+import alsoLikeImg4 from "./src/Images/product-item-7.jpg";
+import alsoLikeImg5 from "./src/Images/product-item-8.jpg";
+
+export const alsoLikeSection = [
+  {
+    image: alsoLikeImg1,
+    id: 1,
+    label: "Dark florish onepiece",
+    price: "$95.00",
+  },
+  {
+    image: alsoLikeImg2,
+    id: 2,
+    label: "Baggy Shirt",
+    price: "$55.00",
+  },
+  {
+    image: alsoLikeImg3,
+    id: 3,
+    label: "Cotton off-white shirt",
+    price: "$65.00",
+  },
+  {
+    image: alsoLikeImg4,
+    id: 4,
+    label: "WHITE T-SHIRT",
+    price: "$50.00",
+  },
+  {
+    image: alsoLikeImg5,
+    id: 5,
+    label: "CROP SWEATER",
+    price: "$70.00",
+  },
+];

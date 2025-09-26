@@ -76,7 +76,7 @@ const Hero = () => {
             <SwiperSlide key={section.id}>
               <motion.div
                 variants={fadeUp(0.6)}
-                className="group flex flex-col items-center justify-around gap-3cursor-pointer"
+                className="group flex flex-col items-center justify-around gap-3 cursor-pointer"
               >
                 <div
                   className="group overflow-hidden hover:scale-90
