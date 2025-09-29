@@ -296,3 +296,15 @@ export const alsoLikeSection = [
     price: "$70.00",
   },
 ];
+
+import shopImg from "./src/Images/single-image-2.jpg";
+
+export const shopCollectionSection = [
+  {
+    image: shopImg,
+    id: 1,
+    label: "Classic winter collection",
+    description:
+      "Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla a. Ac sed eu fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit libero. Ultricies quam nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id in. Pulvinar commodo mollis diam sed facilisis at cursus imperdiet cursus ac faucibus sit faucibus sit libero.",
+  },
+];

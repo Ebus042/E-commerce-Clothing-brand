@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 import Collections from "./components/Collections";
 import BestSales from "./components/BestSales";
 import AlsoLike from "./components/AlsoLike";
+import ShopCollection from "./components/ShopCollection";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Collections />
         <BestSales />
         <AlsoLike />
+        <ShopCollection />
       </main>
     </>
   );
