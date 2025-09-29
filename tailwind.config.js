@@ -8,6 +8,9 @@ export default {
         jost: ["Jost", "sans-serif"],
         marcellus: ["Marcellus", "serif"],
       },
+      animation: {
+        "spin-slow": "spin 30s linear infinite", // 5s per rotation
+      },
     },
   },
   plugins: [],

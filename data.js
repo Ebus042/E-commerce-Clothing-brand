@@ -308,3 +308,48 @@ export const shopCollectionSection = [
       "Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida orci, fringilla a. Ac sed eu fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit libero. Ultricies quam nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id in. Pulvinar commodo mollis diam sed facilisis at cursus imperdiet cursus ac faucibus sit faucibus sit libero.",
   },
 ];
+
+import blogImg1 from "./src/Images/post-large-image1.jpg";
+import blogImg2 from "./src/Images/post-large-image2.jpg";
+import blogImg3 from "./src/Images/post-large-image3.jpg";
+
+export const blogPostSection = [
+  {
+    image: blogImg1,
+    id: 1,
+    label: "How to look outstanding in pastel",
+    year: "Fashion / jul 11, 2022",
+    description:
+      "Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...",
+  },
+  {
+    image: blogImg2,
+    id: 2,
+    label: "Top 10 fashion trend for summer",
+    year: "Fashion / jul 11, 2022",
+    description:
+      "Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...",
+  },
+  {
+    image: blogImg3,
+    id: 3,
+    label: "Crazy fashion with unique moment",
+    year: "Fashion / jul 11, 2022",
+    description:
+      "Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...",
+  },
+];
+
+import brandLogo1 from "./src/Images/logo1.png";
+import brandLogo2 from "./src/Images/logo2.png";
+import brandLogo3 from "./src/Images/logo3.png";
+import brandLogo4 from "./src/Images/logo4.png";
+import brandLogo5 from "./src/Images/logo5.png";
+
+export const brandLogos = [
+  brandLogo1,
+  brandLogo2,
+  brandLogo3,
+  brandLogo4,
+  brandLogo5,
+];

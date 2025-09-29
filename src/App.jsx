@@ -7,6 +7,10 @@ import Collections from "./components/Collections";
 import BestSales from "./components/BestSales";
 import AlsoLike from "./components/AlsoLike";
 import ShopCollection from "./components/ShopCollection";
+import BlogPost from "./components/BlogPost";
+import ImageVid from "./components/ImageVid";
+import BrandLogo from "./components/BrandLogo";
+import NewsLetter from "./components/NewsLetter";
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
         <BestSales />
         <AlsoLike />
         <ShopCollection />
+        <ImageVid />
+        <BlogPost />
+        <BrandLogo />
+        <NewsLetter />
       </main>
     </>
   );
