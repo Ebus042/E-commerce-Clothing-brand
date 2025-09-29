@@ -353,3 +353,19 @@ export const brandLogos = [
   brandLogo4,
   brandLogo5,
 ];
+
+import instaImg1 from "./src/Images/insta-item1.jpg";
+import instaImg2 from "./src/Images/insta-item2.jpg";
+import instaImg3 from "./src/Images/insta-item3.jpg";
+import instaImg4 from "./src/Images/insta-item4.jpg";
+import instaImg5 from "./src/Images/insta-item5.jpg";
+import instaImg6 from "./src/Images/insta-item6.jpg";
+
+export const instagramImages = [
+  instaImg1,
+  instaImg2,
+  instaImg3,
+  instaImg4,
+  instaImg5,
+  instaImg6,
+];

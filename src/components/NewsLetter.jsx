@@ -21,10 +21,10 @@ const NewsLetter = () => {
             className="border-2 rounded-md text-xl w-full outline-none p-6 mb-5 font-jost py-4 px-2"
           />
           <div
-            className="text-3xl mb-4 bg-gray-950 transition-all duration-500 ease-in-out
-               md:py-2 md:px-2 text-white py-4 px-2 hover:bg-gray-600"
+            className="relative bg-gray-950 transition-all duration-500 ease-in-out
+                text-white py-2 px-2 hover:bg-gray-600"
           >
-            <button>Sign Up</button>
+            <button className="text-2xl font-jost uppercase">Sign Up</button>
           </div>
         </div>
       </div>

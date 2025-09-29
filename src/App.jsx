@@ -11,6 +11,7 @@ import BlogPost from "./components/BlogPost";
 import ImageVid from "./components/ImageVid";
 import BrandLogo from "./components/BrandLogo";
 import NewsLetter from "./components/NewsLetter";
+import Instagram from "./components/Instagram";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <BlogPost />
         <BrandLogo />
         <NewsLetter />
+        <Instagram />
       </main>
     </>
   );
