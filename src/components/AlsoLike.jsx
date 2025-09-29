@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Pagination, Navigation } from "swiper/modules";
-import { newArrival } from "../../data";
+import { alsoLikeSection, newArrival } from "../../data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart } from "lucide-react";
@@ -8,15 +8,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const Collections = () => {
+const AlsoLike = () => {
   return (
     <section className="font-jost mx-3 md:mx-12 uppercase my-10">
       <div>
         <div className="flex flex-col flex-start py-4 md:flex-row justify-between md:items-center">
-          <h4 className="text-3xl uppercase">Our New Arrivals</h4>
+          <h4 className="text-3xl uppercase my-2">You may also like</h4>
           <p
-            className="uppercase tracking-wide cursor-pointer relative after:absolute after:w-[10.2rem] lg:after:w-40
-              after:bg-gray-400 after:bottom-0 after:left-0 after:h-[1px]"
+            className="uppercase tracking-wide relative after:absolute after:w-[10.2rem] lg:after:w-40 
+              after:bg-gray-400 after:bottom-0 after:left-0 after:h-[1.5px]"
           >
             View All Products
           </p>
@@ -36,7 +36,7 @@ const Collections = () => {
             1024: { slidesPerView: 3 },
           }}
         >
-          {newArrival.map((item) => {
+          {alsoLikeSection.map((item) => {
             const [hovered, setHovered] = useState(false);
 
             return (
@@ -82,7 +82,7 @@ const Collections = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3 }}
-                        className=""
+                        className="my-5"
                       >
                         {item.price}
                       </motion.p>
@@ -93,7 +93,7 @@ const Collections = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.3 }}
-                        className="mb-3 px-2 py-1 uppercase"
+                        className="my-5 px-2 py-1 uppercase"
                       >
                         Add To Cart
                       </motion.button>
@@ -109,4 +109,4 @@ const Collections = () => {
   );
 };
 
-export default Collections;
+export default AlsoLike;

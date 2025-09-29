@@ -14,3 +14,6 @@ html {
   overflow-y: scroll;
   scroll-padding-top: 0;
 }
+.mySwiper .swiper-pagination {
+  bottom: 1rem; /* default is usually ~0.5rem, increase if needed */
+}

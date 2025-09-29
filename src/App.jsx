@@ -3,6 +3,9 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Cart from "./components/Cart";
+import Collections from "./components/Collections";
+import BestSales from "./components/BestSales";
+import AlsoLike from "./components/AlsoLike";
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       <main className="pt-10">
         <Features />
         <Cart />
+        <Collections />
+        <BestSales />
+        <AlsoLike />
       </main>
     </>
   );

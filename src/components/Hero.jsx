@@ -56,7 +56,7 @@ const Hero = () => {
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={40}
-          pagination
+          pagination={{ clickable: true }}
           navigation
           // slidePerView={3}
           loop={true}
@@ -84,6 +84,7 @@ const Hero = () => {
                 >
                   <img
                     src={section.src}
+                    loading="lazy"
                     alt={section.alt}
                     className="w-full h-auto transition-transform duration-500 
                     object-cover ease-in-out group-hover:scale-125"

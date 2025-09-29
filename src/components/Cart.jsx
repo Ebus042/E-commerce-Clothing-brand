@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Cart = () => {
   return (
-    <section className="my-32 mx-3 lg:mx-16">
-      <div className="flex flex-col gap-6 lg:flex-row justify-evenly items-center">
+    <section className="my-32 mx-3 md:mx-12">
+      <div className="flex flex-col gap-6 md:flex-row justify-evenly items-center">
         {carts.map((cart) => (
           <div key={cart.id} className="group overflow-hidden">
             <div
@@ -13,8 +13,10 @@ const Cart = () => {
             >
               <motion.img
                 src={cart.image}
+                loading="lazy"
                 alt={cart.alt}
-                className="object-contain hover:transition-transform hover:duration-500 group-hover:scale-110
+                className="object-contain hover:transition-transform 
+                hover:duration-500 group-hover:scale-110
                 "
                 initial={{ scale: 0.4, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
