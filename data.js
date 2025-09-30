@@ -408,3 +408,36 @@ export const footerContents = {
     },
   ],
 };
+
+export const reviews = [
+  {
+    description:
+      "Best fitted white denim shirt more white denim than expected flexible carzy soft",
+    customer: "Denim Craze",
+    id: 1,
+  },
+  {
+    description:
+      "More than expected crazy soft, flexible and best fitted white simple denim shirts.",
+    customer: "Confi Dence",
+    id: 2,
+  },
+  {
+    description:
+      "Best fitted white denim shirt more white denim than expected flexible carzy soft",
+    customer: "Joseph Dick",
+    id: 3,
+  },
+  {
+    description:
+      "Best fitted white denim shirt more white denim than expected flexible carzy soft",
+    customer: "Crystal Lent",
+    id: 4,
+  },
+  {
+    description:
+      "Best fitted white denim shirt more white denim than expected flexible carzy soft",
+    customer: "Austine Neche",
+    id: 5,
+  },
+];

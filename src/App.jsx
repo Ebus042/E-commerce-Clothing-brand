@@ -13,6 +13,7 @@ import BrandLogo from "./components/BrandLogo";
 import NewsLetter from "./components/NewsLetter";
 import Instagram from "./components/Instagram";
 import Footer1 from "./components/Footer1";
+import CustomersReview from "./components/CustomersReview";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <AlsoLike />
         <ShopCollection />
         <ImageVid />
+        <CustomersReview />
         <BlogPost />
         <BrandLogo />
         <NewsLetter />

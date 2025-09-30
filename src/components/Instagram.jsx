@@ -12,7 +12,7 @@ const Instagram = () => {
         <div className="">
           <button
             className="absolute font-jost text-lg bg-gray-950 transition-all duration-500 ease-in-out
-                text-white py-2 px-10 hover:bg-gray-600 left-16 lg:left-[30rem] bottom-2"
+                text-white py-2 px-10 hover:bg-gray-600 left-16 md:left-[16rem] lg:left-[30rem] bottom-2"
           >
             Follow us on Instagram
           </button>
