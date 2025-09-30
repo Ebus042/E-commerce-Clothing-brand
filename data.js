@@ -430,7 +430,7 @@ export const reviews = [
   },
   {
     description:
-      "Best fitted white denim shirt more white denim than expected flexible carzy soft",
+      "More than expected crazy soft, flexible and best fitted white simple denim shirts.",
     customer: "Crystal Lent",
     id: 4,
   },
@@ -440,4 +440,18 @@ export const reviews = [
     customer: "Austine Neche",
     id: 5,
   },
+];
+
+import dhlImg from "./src/Images/dhl-logo.png";
+import masterCardImg from "./src/Images/master-card.png";
+import paypalImg from "./src/Images/paypal-card.png";
+import visaCardImg from "./src/Images/visa-card.png";
+import arctIconImg from "./src/Images/arct-icon.png";
+
+export const footer2Images = [
+  arctIconImg,
+  dhlImg,
+  visaCardImg,
+  paypalImg,
+  masterCardImg,
 ];

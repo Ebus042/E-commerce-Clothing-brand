@@ -14,6 +14,7 @@ import NewsLetter from "./components/NewsLetter";
 import Instagram from "./components/Instagram";
 import Footer1 from "./components/Footer1";
 import CustomersReview from "./components/CustomersReview";
+import Footer2 from "./components/Footer2";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
       </main>
       <footer>
         <Footer1 />
+        <Footer2 />
       </footer>
     </>
   );

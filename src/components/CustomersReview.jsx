@@ -41,7 +41,7 @@ const CustomersReview = () => {
             640: { slidesPerView: 2, spaceBetween: 20 },
             1024: { slidesPerView: 2, spaceBetween: 20 },
           }}
-          className="mySwiper"
+          className="testimonialSwiper"
         >
           {reviews.map((review) => (
             <SwiperSlide

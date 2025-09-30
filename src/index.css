@@ -22,18 +22,18 @@ html {
 .mySwiper .swiper-pagination {
   bottom: 1rem; /* default is usually ~0.5rem, increase if needed */
 }
-.mySwiper .swiper-slide {
+.testimonialSwiper .swiper-slide {
   transform: scale(0.85); /* smaller by default */
   transition: transform 0.3s ease;
   opacity: 0.5;
 }
 
-.mySwiper .swiper-slide-active {
+.testimonialSwiper .swiper-slide-active {
   opacity: 1; /* keep the center slide fully visible */
   transform: scale(1);
 }
 
-.mySwiper .swiper-pagination-bullet {
+.testimonialSwiper .swiper-pagination-bullet {
   background: #ccc; /* your default color */
   opacity: 1; /* keep visible */
   width: 14px;
@@ -41,6 +41,6 @@ html {
 }
 
 /* active bullet */
-.mySwiper .swiper-pagination-bullet-active {
+.testimonialSwiper .swiper-pagination-bullet-active {
   background: #565656; /* your active color */
 }

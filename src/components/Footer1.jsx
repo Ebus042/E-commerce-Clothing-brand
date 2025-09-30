@@ -2,7 +2,7 @@ import { footerContents } from "../../data";
 
 const Footer1 = () => {
   return (
-    <footer className="bg-[#f1f1f0] mt-32">
+    <footer className="mt-32 border-b">
       <div className="mx-3 py-10 md:mx-12 grid gap-10 md:grid-cols-2 xl:grid-cols-4">
         <div>
           <h4 className="font-bold text-3xl my-5">{footerContents.logo}</h4>
@@ -10,7 +10,7 @@ const Footer1 = () => {
         </div>
         {footerContents.section.map((item, index) => (
           <div key={index}>
-            <h3 className="uppercase my-5 text-2xl font-semibold font-marcellus">
+            <h3 className="uppercase my-5 text-2xl font-marcellus">
               {item.title}
             </h3>
             {item.links && (

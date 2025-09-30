@@ -1,22 +1,38 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { instagramImages } from "../../data";
+import { Autoplay, FreeMode } from "swiper/modules";
 
 const Instagram = () => {
   return (
-    <section>
-      <div className="relative grid grid-cols-2 gap-y-8 lg:grid-cols-6">
+    <section className="relative overflow-visible">
+      <Swiper
+        modules={[Autoplay, FreeMode]}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+        }}
+        freeMode={true}
+        loop={true}
+        speed={2000}
+        breakpoints={{
+          1024: { slidesPerView: 5 },
+          768: { slidesPerView: 3 },
+          0: { slidesPerView: 1 },
+        }}
+        className="relative"
+      >
         {instagramImages.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt="" />
-          </div>
+          <SwiperSlide key={index}>
+            <img src={image} alt="instagram images" className="" />
+          </SwiperSlide>
         ))}
-        <div className="">
-          <button
-            className="absolute font-jost text-lg bg-gray-950 transition-all duration-500 ease-in-out
-                text-white py-2 px-10 hover:bg-gray-600 left-16 md:left-[16rem] lg:left-[30rem] bottom-2"
-          >
-            Follow us on Instagram
-          </button>
-        </div>
+      </Swiper>
+      <div
+        className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 
+             font-jost text-lg z-50 bg-gray-950 text-white py-2 px-10 
+             hover:bg-gray-600 w-64 transition-all duration-500 ease-in-out"
+      >
+        <button className="text-lg">Follow us on Instagram</button>
       </div>
     </section>
   );
