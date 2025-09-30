@@ -15,20 +15,27 @@ import Instagram from "./components/Instagram";
 import Footer1 from "./components/Footer1";
 import CustomersReview from "./components/CustomersReview";
 import Footer2 from "./components/Footer2";
+import { useState } from "react";
 
 function App() {
+  const [addToCart, setAddToCart] = useState(0);
+
+  function handleCart() {
+    setAddToCart(addToCart + 1);
+  }
+
   return (
     <>
       <header className="bg-[#f1f1f0]">
-        <Header />
+        <Header addToCart={addToCart} />
         <Hero />
       </header>
       <main className="pt-10">
         <Features />
         <Cart />
-        <Collections />
-        <BestSales />
-        <AlsoLike />
+        <Collections handleCart={handleCart} />
+        <BestSales handleCart={handleCart} />
+        <AlsoLike handleCart={handleCart} />
         <ShopCollection />
         <ImageVid />
         <CustomersReview />

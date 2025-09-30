@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const BestSales = () => {
+const BestSales = ({ handleCart }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -97,6 +97,7 @@ const BestSales = () => {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
                       className="px-2 py-1 uppercase text-sm"
+                      onClick={() => handleCart()}
                     >
                       Add To Cart
                     </motion.button>

@@ -3,7 +3,7 @@ import { navbar } from "../../data";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = () => {
+const Header = ({ addToCart }) => {
   const [clicked, setClicked] = useState(false);
 
   return (
@@ -35,8 +35,8 @@ const Header = () => {
 
         {/* Desktop Icons */}
         <div className="hidden xl:flex items-center z-50 gap-6 text-[#545454]">
-          <p className="cursor-pointer">Wishlist(0)</p>
-          <span className="cursor-pointer">Cart(0)</span>
+          <p className="cursor-pointer">Wishlist()</p>
+          <span className="cursor-pointer">Cart({addToCart})</span>
           <button>
             <Search />
           </button>
@@ -44,7 +44,7 @@ const Header = () => {
 
         {/* Mobile Icons */}
         <div className="flex xl:hidden items-center gap-4 text-lg font-semibold">
-          <Heart className="cursor-pointer" />
+          <Heart className="cursor-pointer"></Heart>
           <ShoppingCart className="cursor-pointer" />
           <button>
             <Search />
