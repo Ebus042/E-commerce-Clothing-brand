@@ -12,6 +12,7 @@ import ImageVid from "./components/ImageVid";
 import BrandLogo from "./components/BrandLogo";
 import NewsLetter from "./components/NewsLetter";
 import Instagram from "./components/Instagram";
+import Footer1 from "./components/Footer1";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         <NewsLetter />
         <Instagram />
       </main>
+      <footer>
+        <Footer1 />
+      </footer>
     </>
   );
 }

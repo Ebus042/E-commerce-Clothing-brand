@@ -369,3 +369,42 @@ export const instagramImages = [
   instaImg5,
   instaImg6,
 ];
+
+export const footerContents = {
+  logo: "NEA-DEV",
+  description:
+    "Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.",
+  section: [
+    {
+      title: "Quick Links",
+      links: ["Home", "About", "Services", "Single item", "Contact"],
+    },
+
+    {
+      title: "Help & Info",
+      links: [
+        "Track Your Order",
+        "Returns + Exchanges",
+        "Shipping + Delivery",
+        "Contact Us",
+        "Find us easy",
+        "Faqs",
+      ],
+    },
+    {
+      title: "Contact Us",
+      details: [
+        {
+          type: "email",
+          label: "Do you have any questions or suggestions?",
+          value: "nwaforebuka12@gmail.com",
+        },
+        {
+          type: "phone",
+          label: "Do you need support? Give us a call.",
+          value: "+2348100655023",
+        },
+      ],
+    },
+  ],
+};
