@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ProductCards from "./ProductCards";
 
-const Collections = ({ handleCart, handleWishList }) => {
+const Collections = ({ handleCart, handleWishList, addWishList }) => {
   return (
     <section id="shop" className="font-jost mx-3 md:mx-12 uppercase my-10">
       <div>
@@ -41,6 +41,7 @@ const Collections = ({ handleCart, handleWishList }) => {
                 item={item}
                 handleCart={handleCart}
                 handleWishList={handleWishList}
+                addWishList={addWishList}
               />
             </SwiperSlide>
           ))}

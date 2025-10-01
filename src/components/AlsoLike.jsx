@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ProductCards from "./ProductCards";
 
-const AlsoLike = ({ handleCart, handleWishList }) => {
+const AlsoLike = ({ handleCart, handleWishList, addWishList }) => {
   return (
     <section className="font-jost mx-3 md:mx-12 uppercase my-10">
       <div>
@@ -41,6 +41,7 @@ const AlsoLike = ({ handleCart, handleWishList }) => {
                 item={item}
                 handleCart={handleCart}
                 handleWishList={handleWishList}
+                addWishList={addWishList}
               />
             </SwiperSlide>
             //   onMouseEnter={() => setHoveredIndex(index)}

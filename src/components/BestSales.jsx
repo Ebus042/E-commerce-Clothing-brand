@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ProductCards from "./ProductCards";
 
-const BestSales = ({ handleCart, handleWishList }) => {
+const BestSales = ({ handleCart, handleWishList, addWishList }) => {
   return (
     <section className="font-jost mx-3 md:mx-12 uppercase my-36 py-10">
       <div>
@@ -43,6 +43,7 @@ const BestSales = ({ handleCart, handleWishList }) => {
                 item={item}
                 handleCart={handleCart}
                 handleWishList={handleWishList}
+                addWishList={addWishList}
               />
             </SwiperSlide>
           ))}

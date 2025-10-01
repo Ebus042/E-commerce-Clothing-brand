@@ -3,8 +3,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart } from "lucide-react";
 
-const ProductCards = ({ item, handleCart, handleWishList }) => {
+const ProductCards = ({ item, handleCart, handleWishList, addWishList }) => {
   const [hovered, setHovered] = useState(false);
+
+  const isInWishlist = addWishList?.some((p) => p.id === item.id) || false;
 
   return (
     <div
@@ -32,14 +34,16 @@ const ProductCards = ({ item, handleCart, handleWishList }) => {
         {/* Wishlist Button */}
         <motion.button
           initial={{ opacity: 0 }}
-          animate={{ opacity: hovered ? 1 : 0 }}
+          animate={{ opacity: hovered || isInWishlist ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-3 right-3 bg-white p-2 shadow-md"
+          className="absolute top-5 right-3 bg-white p-2 shadow-md"
           aria-label="Add to Wishlist"
+          onClick={() => handleWishList(item)}
         >
           <Heart
-            className="w-5 h-5 text-gray-700 hover:text-red-500"
-            onClick={() => handleWishList()}
+            className={`w-5 h-5 ${
+              isInWishlist ? "text-red-500" : "text-gray-700"
+            }`}
           />
         </motion.button>
       </div>
@@ -68,7 +72,7 @@ const ProductCards = ({ item, handleCart, handleWishList }) => {
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.3 }}
               className="mb-3 px-2 py-1 uppercase"
-              onClick={() => handleCart()}
+              onClick={() => handleCart(item)}
             >
               Add To Cart
             </motion.button>

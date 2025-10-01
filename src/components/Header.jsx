@@ -7,7 +7,7 @@ const Header = ({ addToCart, addWishList }) => {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <header className="shadow py-5 font-jost fixed w-full z-20 top-0 left-0 bg-[#f1f1f0]">
+    <header className="shadow py-2 font-jost fixed w-full z-20 top-0 left-0 bg-[#f1f1f0]">
       <nav className="flex justify-between items-center mx-5 lg:ml-10 lg:mr-20 xl:mx-5">
         {/* Logo */}
 
@@ -20,7 +20,8 @@ const Header = ({ addToCart, addWishList }) => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setClicked(!clicked)}
-          className="xl:hidden bg-gray-200 p-2 z-20 rounded-md"
+          className="xl:hidden bg-gray-200 p-2 z-20 hover:bg-slate-300
+          transition-all duration-500 ease-in-out rounded-md"
         >
           {clicked ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -31,7 +32,7 @@ const Header = ({ addToCart, addWishList }) => {
             <a
               key={item.id}
               href={item.href}
-              className="cursor-pointer hover:scale-110 hover:text-red-500 transition duration-300"
+              className="cursor-pointer hover:scale-125 hover:text-red-500 transition duration-300"
             >
               {item.label}
             </a>
@@ -117,7 +118,7 @@ const Header = ({ addToCart, addWishList }) => {
             animate={{ x: "50%" }} // stops halfway (50% viewport width shown)
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.4 }}
-            className="fixed top-0 right-0 w-80 h-full bg-gray-100 shadow-lg p-6 uppercase text-[#545454] text-lg z-40"
+            className="fixed top-0 right-0 w-80  h-full bg-gray-100 shadow-lg p-6 uppercase text-[#545454] text-lg z-40"
           >
             <div
               onClick={() => setClicked(!clicked)}
@@ -127,7 +128,8 @@ const Header = ({ addToCart, addWishList }) => {
                 <a
                   key={item.id}
                   href={item.href}
-                  className="block cursor-pointer hover:pl-2 transition-all"
+                  className="block cursor-pointer hover:text-red-500
+                   duration-500 ease-in-out hover:pl-4 transition-all"
                 >
                   {item.label}
                 </a>

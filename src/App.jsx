@@ -18,28 +18,47 @@ import Footer2 from "./components/Footer2";
 import { useState } from "react";
 
 function App() {
-  const [addToCart, setAddToCart] = useState(0);
-  const [addWishList, setAddWishList] = useState(0);
+  const [addToCart, setAddToCart] = useState([]);
+  const [addWishList, setAddWishList] = useState([]);
 
-  function handleCart() {
-    setAddToCart(addToCart + 1);
+  function handleWishList(item) {
+    setAddWishList((prev) => {
+      const exists = prev.find((p) => p.id === item.id);
+      if (exists) {
+        return prev.filter((p) => p.id !== item.id);
+      } else {
+        return [...prev, item];
+      }
+    });
   }
-  function handleWishList() {
-    setAddWishList(addWishList + 1);
+  function handleCart(item) {
+    setAddToCart((prev) => [...prev, item]);
   }
 
   return (
     <>
       <header className="bg-[#f1f1f0]">
-        <Header addToCart={addToCart} addWishList={addWishList} />
+        <Header addToCart={addToCart.length} addWishList={addWishList.length} />
         <Hero />
       </header>
       <main className="pt-10">
         <Features />
         <Cart />
-        <Collections handleCart={handleCart} handleWishList={handleWishList} />
-        <BestSales handleCart={handleCart} handleWishList={handleWishList} />
-        <AlsoLike handleCart={handleCart} handleWishList={handleWishList} />
+        <Collections
+          handleCart={handleCart}
+          handleWishList={handleWishList}
+          addWishList={addWishList}
+        />
+        <BestSales
+          handleCart={handleCart}
+          handleWishList={handleWishList}
+          addWishList={addWishList}
+        />
+        <AlsoLike
+          handleCart={handleCart}
+          handleWishList={handleWishList}
+          addWishList={addWishList}
+        />
         <ShopCollection />
         <ImageVid />
         <CustomersReview />
