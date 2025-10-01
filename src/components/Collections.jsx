@@ -1,19 +1,15 @@
-import React, { useState } from "react";
 import { Pagination, Navigation } from "swiper/modules";
 import { newArrival } from "../../data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Heart } from "lucide-react";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ProductCards from "./ProductCards";
 
 const Collections = ({ handleCart, handleWishList }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   return (
-    <section className="font-jost mx-3 md:mx-12 uppercase my-10">
+    <section id="shop" className="font-jost mx-3 md:mx-12 uppercase my-10">
       <div>
         <div className="flex flex-col flex-start py-4 md:flex-row justify-between md:items-center">
           <h4 className="text-3xl uppercase">Our New Arrivals</h4>

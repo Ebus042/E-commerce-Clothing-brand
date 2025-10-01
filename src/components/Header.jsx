@@ -10,7 +10,12 @@ const Header = ({ addToCart, addWishList }) => {
     <header className="shadow py-5 font-jost fixed w-full z-20 top-0 left-0 bg-[#f1f1f0]">
       <nav className="flex justify-between items-center mx-5 lg:ml-10 lg:mr-20 xl:mx-5">
         {/* Logo */}
-        <h2 className="font-bold text-3xl">NEA-DEV</h2>
+
+        <div>
+          <a href="home" className="font-bold text-3xl cursor-pointer">
+            NEA-DEV
+          </a>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -26,7 +31,7 @@ const Header = ({ addToCart, addWishList }) => {
             <a
               key={item.id}
               href={item.href}
-              className="cursor-pointer hover:scale-110 transition duration-300"
+              className="cursor-pointer hover:scale-110 hover:text-red-500 transition duration-300"
             >
               {item.label}
             </a>
@@ -34,14 +39,18 @@ const Header = ({ addToCart, addWishList }) => {
         </div>
 
         {/* Desktop Icons */}
-        <div className="hidden xl:flex items-center z-50 gap-6 text-[#545454]">
+        <div className="hidden xl:flex items-center z-50 gap-10 text-[#545454]">
           <div className="relative">
-            <p className="cursor-pointer">
+            <p
+              className="cursor-pointer text-xl hover:scale-125
+               hover:text-red-500
+            transition-all duration-500 ease-in-out"
+            >
               Wishlist
               {addWishList > 0 && (
                 <span
                   className="absolute -top-3 -right-4
-              text-[13px] px-1 py-0.5 rounded-full bg-red-500 text-white"
+              text-[13px] px-1 py-0.2 rounded-full bg-red-500 text-white"
                 >
                   {addWishList}
                 </span>
@@ -49,7 +58,11 @@ const Header = ({ addToCart, addWishList }) => {
             </p>
           </div>
           <div className="relative">
-            <p className="cursor-pointer">
+            <p
+              className="cursor-pointer text-xl hover:scale-125
+               hover:text-red-500
+            transition-all duration-500 ease-in-out"
+            >
               Cart
               {addToCart > 0 && (
                 <span
@@ -106,7 +119,10 @@ const Header = ({ addToCart, addWishList }) => {
             transition={{ type: "tween", duration: 0.4 }}
             className="fixed top-0 right-0 w-80 h-full bg-gray-100 shadow-lg p-6 uppercase text-[#545454] text-lg z-40"
           >
-            <div className="flex flex-col space-y-6 mt-10">
+            <div
+              onClick={() => setClicked(!clicked)}
+              className="flex flex-col space-y-6 mt-10"
+            >
               {navbar.map((item) => (
                 <a
                   key={item.id}

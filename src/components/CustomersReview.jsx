@@ -14,7 +14,7 @@ import "swiper/css/effect-coverflow";
 
 const CustomersReview = () => {
   return (
-    <section className="my-32 bg-[#f1f1f0] py-10">
+    <section id="testimonials" className="my-32 bg-[#f1f1f0] py-10">
       <div className="mx-3 md:mx-12">
         <h4 className="text-center font-marcellus font-semibold text-3xl my-10">
           We Love Good Compliment.

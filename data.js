@@ -1,31 +1,31 @@
 export const navbar = [
   {
-    href: "/",
+    href: "#home",
     label: "Home",
     id: 1,
   },
   {
-    href: "/features",
+    href: "#features",
     label: "Features",
     id: 2,
   },
   {
-    href: "/shop",
+    href: "#shop",
     label: "Shop",
     id: 3,
   },
   {
-    href: "/testimonials",
+    href: "#testimonials",
     label: "Testimonials",
     id: 4,
   },
   {
-    href: "/blogs",
+    href: "#blogs",
     label: "Blogs",
     id: 5,
   },
   {
-    href: "/contact",
+    href: "#contact",
     label: "Contact",
     id: 6,
   },

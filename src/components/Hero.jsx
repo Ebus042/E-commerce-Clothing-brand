@@ -29,6 +29,7 @@ const fadeUp = (delay = 0) => ({
 const Hero = () => {
   return (
     <motion.div
+      id="home"
       variants={container}
       initial="hidden"
       animate="show"

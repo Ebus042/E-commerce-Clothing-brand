@@ -2,7 +2,7 @@ import { blogPostSection } from "../../data";
 
 const BlogPost = () => {
   return (
-    <section className="mx-3 md:mx-12 my-20">
+    <section id="blogs" className="mx-3 md:mx-12 my-20">
       <div>
         <div className="flex flex-col flex-start md:flex-row justify-between md:items-center my-5">
           <h4 className="text-3xl uppercase">Read Blog Posts</h4>

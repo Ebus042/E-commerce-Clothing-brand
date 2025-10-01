@@ -2,7 +2,10 @@ import newsLetterImg from "../Images/pattern-bg.png";
 
 const NewsLetter = () => {
   return (
-    <section className="relative w-full mt-20 h-[400px] flex items-center justify-center">
+    <section
+      id="contact"
+      className="relative w-full mt-20 h-[400px] flex items-center justify-center"
+    >
       <div className=" mx-3 md:mx-12">
         <img
           src={newsLetterImg}

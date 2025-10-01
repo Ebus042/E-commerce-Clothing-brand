@@ -23,7 +23,7 @@ const fadeIn = {
 
 const Features = () => {
   return (
-    <div className="my-20 mx-3 md:mx-12">
+    <section id="features" className="my-20 mx-3 md:mx-12">
       <motion.div
         variants={container}
         initial="hidden"
@@ -56,7 +56,7 @@ const Features = () => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 };
 
