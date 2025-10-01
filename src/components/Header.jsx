@@ -3,7 +3,7 @@ import { navbar } from "../../data";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = ({ addToCart }) => {
+const Header = ({ addToCart, addWishList }) => {
   const [clicked, setClicked] = useState(false);
 
   return (
@@ -35,8 +35,32 @@ const Header = ({ addToCart }) => {
 
         {/* Desktop Icons */}
         <div className="hidden xl:flex items-center z-50 gap-6 text-[#545454]">
-          <p className="cursor-pointer">Wishlist()</p>
-          <span className="cursor-pointer">Cart({addToCart})</span>
+          <div className="relative">
+            <p className="cursor-pointer">
+              Wishlist
+              {addWishList > 0 && (
+                <span
+                  className="absolute -top-3 -right-4
+              text-[13px] px-1 py-0.5 rounded-full bg-red-500 text-white"
+                >
+                  {addWishList}
+                </span>
+              )}
+            </p>
+          </div>
+          <div className="relative">
+            <p className="cursor-pointer">
+              Cart
+              {addToCart > 0 && (
+                <span
+                  className="absolute -top-3 -right-4
+              text-[13px] px-1 py-0.5 rounded-full bg-red-500 text-white"
+                >
+                  {addToCart}
+                </span>
+              )}
+            </p>
+          </div>
           <button>
             <Search />
           </button>
@@ -44,8 +68,28 @@ const Header = ({ addToCart }) => {
 
         {/* Mobile Icons */}
         <div className="flex xl:hidden items-center gap-4 text-lg font-semibold">
-          <Heart className="cursor-pointer"></Heart>
-          <ShoppingCart className="cursor-pointer" />
+          <div className="relative">
+            <Heart className="cursor-pointer w-8 h-8" />
+            {addWishList > 0 && (
+              <span
+                className="absolute -top-2 -right-2 text-[14px] px-1.5 
+              py-0.5 bg-red-500 text-white rounded-full"
+              >
+                {addWishList}
+              </span>
+            )}
+          </div>
+          <div className="relative">
+            <ShoppingCart className="cursor-pointer w-8 h-8" />
+            {addToCart > 0 && (
+              <span
+                className="absolute -top-2 -right-2 text-[14px] px-1.5 
+              py-0.5 bg-red-500 text-white rounded-full"
+              >
+                {addToCart}
+              </span>
+            )}
+          </div>
           <button>
             <Search />
           </button>

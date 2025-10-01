@@ -19,23 +19,27 @@ import { useState } from "react";
 
 function App() {
   const [addToCart, setAddToCart] = useState(0);
+  const [addWishList, setAddWishList] = useState(0);
 
   function handleCart() {
     setAddToCart(addToCart + 1);
+  }
+  function handleWishList() {
+    setAddWishList(addWishList + 1);
   }
 
   return (
     <>
       <header className="bg-[#f1f1f0]">
-        <Header addToCart={addToCart} />
+        <Header addToCart={addToCart} addWishList={addWishList} />
         <Hero />
       </header>
       <main className="pt-10">
         <Features />
         <Cart />
-        <Collections handleCart={handleCart} />
-        <BestSales handleCart={handleCart} />
-        <AlsoLike handleCart={handleCart} />
+        <Collections handleCart={handleCart} handleWishList={handleWishList} />
+        <BestSales handleCart={handleCart} handleWishList={handleWishList} />
+        <AlsoLike handleCart={handleCart} handleWishList={handleWishList} />
         <ShopCollection />
         <ImageVid />
         <CustomersReview />

@@ -1,16 +1,13 @@
-import React, { useState } from "react";
 import { Pagination, Navigation } from "swiper/modules";
 import { alsoLikeSection } from "../../data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Heart } from "lucide-react";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import ProductCards from "./ProductCards";
 
-const AlsoLike = ({ handleCart }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
+const AlsoLike = ({ handleCart, handleWishList }) => {
   return (
     <section className="font-jost mx-3 md:mx-12 uppercase my-10">
       <div>
@@ -38,64 +35,68 @@ const AlsoLike = ({ handleCart }) => {
             1024: { slidesPerView: 3 },
           }}
         >
-          {alsoLikeSection.map((item, index) => (
-            <SwiperSlide
-              key={item.id}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group overflow-hidden"
-            >
-              <div className="group overflow-hidden hover:scale-105 transition-transform duration-500 ease-in-out relative">
-                <motion.img
-                  initial={{ scale: 0.4, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  src={item.image}
-                  loading="lazy"
-                  alt="Collections"
-                  className="md:w-96 object-contain hover:transition-transform hover:duration-500 group-hover:scale-125"
-                />
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute top-0 right-3 lg:top-3 lg:right-5 bg-white p-2 mt-5 shadow-md"
-                >
-                  <Heart className="w-5 h-5 text-gray-700 hover:text-red-500" />
-                </motion.button>
-              </div>
-              <p className="text-xl mt-6">{item.label}</p>
-
-              <div className="h-8 flex items-center">
-                <AnimatePresence mode="wait">
-                  {hoveredIndex !== index ? (
-                    <motion.p
-                      key="price"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.3 }}
-                      className="my-5"
-                    >
-                      {item.price}
-                    </motion.p>
-                  ) : (
-                    <motion.button
-                      key="button"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.3 }}
-                      className="my-5 px-2 py-1 uppercase"
-                      onClick={() => handleCart()}
-                    >
-                      Add To Cart
-                    </motion.button>
-                  )}
-                </AnimatePresence>
-              </div>
+          {alsoLikeSection.map((item) => (
+            <SwiperSlide key={item.id}>
+              <ProductCards
+                item={item}
+                handleCart={handleCart}
+                handleWishList={handleWishList}
+              />
             </SwiperSlide>
+            //   onMouseEnter={() => setHoveredIndex(index)}
+            //   onMouseLeave={() => setHoveredIndex(null)}
+            //   className="group overflow-hidden"
+            // >
+            //   <div className="group overflow-hidden hover:scale-105 transition-transform duration-500 ease-in-out relative">
+            //     <motion.img
+            //       initial={{ scale: 0.4, opacity: 0 }}
+            //       whileInView={{ scale: 1, opacity: 1 }}
+            //       transition={{ duration: 1.5, ease: "easeInOut" }}
+            //       viewport={{ once: true, amount: 0.2 }}
+            //       src={item.image}
+            //       loading="lazy"
+            //       alt="Collections"
+            //       className="md:w-96 object-contain hover:transition-transform hover:duration-500 group-hover:scale-125"
+            //     />
+            //     <motion.button
+            //       initial={{ opacity: 0 }}
+            //       animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
+            //       transition={{ duration: 0.3 }}
+            //       className="absolute top-0 right-3 lg:top-3 lg:right-5 bg-white p-2 mt-5 shadow-md"
+            //     >
+            //       <Heart className="w-5 h-5 text-gray-700 hover:text-red-500" />
+            //     </motion.button>
+            //   </div>
+            //   <p className="text-xl mt-6">{item.label}</p>
+
+            //   <div className="h-8 flex items-center">
+            //     <AnimatePresence mode="wait">
+            //       {hoveredIndex !== index ? (
+            //         <motion.p
+            //           key="price"
+            //           initial={{ opacity: 0, y: -10 }}
+            //           animate={{ opacity: 1, y: 0 }}
+            //           exit={{ opacity: 0, y: -10 }}
+            //           transition={{ duration: 0.3 }}
+            //           className="my-5"
+            //         >
+            //           {item.price}
+            //         </motion.p>
+            //       ) : (
+            //         <motion.button
+            //           key="button"
+            //           initial={{ opacity: 0, y: 10 }}
+            //           animate={{ opacity: 1, y: 0 }}
+            //           exit={{ opacity: 0, y: 10 }}
+            //           transition={{ duration: 0.3 }}
+            //           className="my-5 px-2 py-1 uppercase"
+            //           onClick={() => handleCart()}
+            //         >
+            //           Add To Cart
+            //         </motion.button>
+            //       )}
+            //     </AnimatePresence>
+            //   </div>
           ))}
         </Swiper>
       </div>
