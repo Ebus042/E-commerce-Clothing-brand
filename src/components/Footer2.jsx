@@ -2,7 +2,7 @@ import { footer2Images } from "../../data";
 
 const Footer2 = () => {
   return (
-    <footer className="my-5 mx-3 md:mx-12">
+    <footer className="mt-5 mx-3 md:mx-12">
       <div className="flex justify-between items-center text-[#797978] flex-col md:flex-row">
         <div className="flex md:items-center flex-col md:flex-row">
           <div className="flex my-4 items-center md:flex-row">

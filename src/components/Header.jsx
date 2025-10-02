@@ -2,46 +2,59 @@ import { Heart, Menu, Search, ShoppingCart, X } from "lucide-react";
 import { navbar } from "../../data";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ addToCart, addWishList }) => {
   const [clicked, setClicked] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
-    <header className="shadow py-2 font-jost fixed w-full z-20 top-0 left-0 bg-[#f1f1f0]">
-      <nav className="flex justify-between items-center mx-5 lg:ml-10 lg:mr-20 xl:mx-5">
+    <header
+      className="shadow py-4 font-jost fixed w-full z-20 
+    top-0 left-0 bg-[#f1f1f0]"
+    >
+      <nav
+        className="flex justify-between items-center
+       mx-5 lg:ml-10 lg:mr-20 xl:mx-5"
+      >
         {/* Logo */}
 
         <div>
-          <a href="home" className="font-bold text-3xl cursor-pointer">
+          <a href="/" className="font-bold text-3xl cursor-pointer">
             NEA-DEV
           </a>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setClicked(!clicked)}
-          className="xl:hidden bg-gray-200 p-2 z-20 hover:bg-slate-300
+        {location.pathname === "/" && (
+          <button
+            onClick={() => setClicked(!clicked)}
+            className="lg:hidden bg-gray-200 p-2 z-20 hover:bg-slate-300
           transition-all duration-500 ease-in-out rounded-md"
-        >
-          {clicked ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          >
+            {clicked ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
 
         {/* Desktop Nav */}
-        <div className="hidden xl:flex items-center gap-8 uppercase text-[#545454] lg:text-lg">
-          {navbar.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              className="cursor-pointer hover:scale-125 hover:text-red-500 transition duration-300"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
+        {location.pathname === "/" && (
+          <div className="hidden lg:flex items-center gap-8 uppercase text-[#545454] lg:text-lg">
+            {navbar.map((item) => (
+              <a
+                key={item.id}
+                href={item.href}
+                className="cursor-pointer hover:scale-125 hover:text-red-500 transition duration-300"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* Desktop Icons */}
-        <div className="hidden xl:flex items-center z-50 gap-10 text-[#545454]">
-          <div className="relative">
+        <div className="hidden lg:flex items-center z-50 gap-10 text-[#545454]">
+          <div onClick={() => navigate("/wishlist")} className="relative">
             <p
               className="cursor-pointer text-xl hover:scale-125
                hover:text-red-500
@@ -81,8 +94,8 @@ const Header = ({ addToCart, addWishList }) => {
         </div>
 
         {/* Mobile Icons */}
-        <div className="flex xl:hidden items-center gap-4 text-lg font-semibold">
-          <div className="relative">
+        <div className="flex lg:hidden items-center gap-4 text-lg font-semibold">
+          <div onClick={() => navigate("/wishlist")} className="relative">
             <Heart className="cursor-pointer w-8 h-8" />
             {addWishList > 0 && (
               <span

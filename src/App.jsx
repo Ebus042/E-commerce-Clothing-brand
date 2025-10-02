@@ -17,6 +17,9 @@ import CustomersReview from "./components/CustomersReview";
 import Footer2 from "./components/Footer2";
 import { useState } from "react";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Wishlist from "./components/Wishlist";
+
 function App() {
   const [addToCart, setAddToCart] = useState([]);
   const [addWishList, setAddWishList] = useState([]);
@@ -39,35 +42,56 @@ function App() {
     <>
       <header className="bg-[#f1f1f0]">
         <Header addToCart={addToCart.length} addWishList={addWishList.length} />
-        <Hero />
       </header>
-      <main className="pt-10">
-        <Features />
-        <Cart />
-        <Collections
-          handleCart={handleCart}
-          handleWishList={handleWishList}
-          addWishList={addWishList}
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <main className="pt-10">
+                <Features />
+                <Cart />
+                <Collections
+                  handleCart={handleCart}
+                  handleWishList={handleWishList}
+                  addWishList={addWishList}
+                />
+                <BestSales
+                  handleCart={handleCart}
+                  handleWishList={handleWishList}
+                  addWishList={addWishList}
+                />
+                <AlsoLike
+                  handleCart={handleCart}
+                  handleWishList={handleWishList}
+                  addWishList={addWishList}
+                />
+                <ShopCollection />
+                <ImageVid />
+                <CustomersReview />
+                <BlogPost />
+                <BrandLogo />
+                <NewsLetter />
+                <Instagram />
+              </main>
+            </>
+          }
         />
-        <BestSales
-          handleCart={handleCart}
-          handleWishList={handleWishList}
-          addWishList={addWishList}
+
+        <Route
+          path="/wishlist"
+          element={
+            <Wishlist
+              addWishList={addWishList}
+              handleWishList={handleWishList}
+              handleCart={handleCart}
+            />
+          }
         />
-        <AlsoLike
-          handleCart={handleCart}
-          handleWishList={handleWishList}
-          addWishList={addWishList}
-        />
-        <ShopCollection />
-        <ImageVid />
-        <CustomersReview />
-        <BlogPost />
-        <BrandLogo />
-        <NewsLetter />
-        <Instagram />
-      </main>
-      <footer>
+      </Routes>
+      <footer className="bg-[#f1f1f0]">
         <Footer1 />
         <Footer2 />
       </footer>
