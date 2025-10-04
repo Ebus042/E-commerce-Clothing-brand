@@ -19,6 +19,8 @@ import { useState } from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Wishlist from "./components/Wishlist";
+import AddCart from "./components/AddCart";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [addToCart, setAddToCart] = useState([]);
@@ -38,8 +40,21 @@ function App() {
     setAddToCart((prev) => [...prev, item]);
   }
 
+  function removeWishlist(id) {
+    setAddWishList((prev) => prev.filter((item) => item.id !== id));
+  }
+
+  function clearCart() {
+    setAddToCart([]);
+  }
+
+  function removeCart(id) {
+    setAddToCart((prev) => prev.filter((item) => item.id !== id));
+  }
+
   return (
     <>
+      <ScrollToTop />
       <header className="bg-[#f1f1f0]">
         <Header addToCart={addToCart.length} addWishList={addWishList.length} />
       </header>
@@ -87,6 +102,19 @@ function App() {
               addWishList={addWishList}
               handleWishList={handleWishList}
               handleCart={handleCart}
+              removeWishlist={removeWishlist}
+            />
+          }
+        />
+
+        <Route
+          path="/carts"
+          element={
+            <AddCart
+              handleCart={handleCart}
+              clearCart={clearCart}
+              addToCart={addToCart}
+              removeCart={removeCart}
             />
           }
         />

@@ -39,7 +39,7 @@ const Header = ({ addToCart, addWishList }) => {
 
         {/* Desktop Nav */}
         {location.pathname === "/" && (
-          <div className="hidden lg:flex items-center gap-8 uppercase text-[#545454] lg:text-lg">
+          <div className="hidden lg:flex items-center gap-10 uppercase text-[#545454] lg:text-lg">
             {navbar.map((item) => (
               <a
                 key={item.id}
@@ -71,7 +71,7 @@ const Header = ({ addToCart, addWishList }) => {
               )}
             </p>
           </div>
-          <div className="relative">
+          <div onClick={() => navigate("/carts")} className="relative">
             <p
               className="cursor-pointer text-xl hover:scale-125
                hover:text-red-500
@@ -106,7 +106,7 @@ const Header = ({ addToCart, addWishList }) => {
               </span>
             )}
           </div>
-          <div className="relative">
+          <div onClick={() => navigate("/carts")} className="relative">
             <ShoppingCart className="cursor-pointer w-8 h-8" />
             {addToCart > 0 && (
               <span

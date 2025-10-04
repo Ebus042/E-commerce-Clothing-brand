@@ -1,17 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { Swiper } from "swiper/react";
 
-const Wishlist = ({ addWishList, handleWishList, handleCart }) => {
+const Wishlist = ({ addWishList, removeWishlist, handleCart }) => {
   const navigate = useNavigate();
   return (
-    <section className="font-jost my-32 mx-10">
+    <section className="font-jost my-16 mx-10">
       <div>
-        <div className="bg-red-500 w-36 py-2 px-1 my-5 mx-3 text-white">
-          <button onClick={() => navigate("/")}>Back to Homepage</button>
+        <div>
+          <button
+            className="bg-red-500 py-2 tracking-widest rounded-md px-10 text-2xl my-5 text-white"
+            onClick={() => navigate("/")}
+          >
+            Back
+          </button>
         </div>
         <div>
           {addWishList.length === 0 ? (
-            <p>No item on wishlist yet!</p>
+            <p
+              className="text-center mt-32 lg:w-80 lg:mx-auto text-2xl bg-gradient-to-br from-gray-200
+           via-red-100 to-red-50 py-5 px-2 rounded-lg leading-10 tracking-wider font-poppins"
+            >
+              No item on wishlist yet!
+            </p>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {addWishList.map((item) => (
@@ -21,20 +31,12 @@ const Wishlist = ({ addWishList, handleWishList, handleCart }) => {
                   <p>{item.price}</p>
 
                   <div
-                    className="flex gap-5 items-center"
                     onClick={() => {
-                      handleWishList(item);
                       handleCart(item);
+                      removeWishlist(item.id);
                     }}
                   >
                     <button>Add to Cart</button>
-
-                    <button
-                      onClick={() => handleWishList(item)}
-                      className="bg-red-500 px-2 rounded-sm hover:bg-red-600 text-white"
-                    >
-                      remove
-                    </button>
                   </div>
                 </div>
               ))}
